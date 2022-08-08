@@ -24,7 +24,7 @@ export const getWeather = async (query = "London") => {
         icon,
         isDay: is_day, 
         localtime, 
-        name, 
+        locationName: name, 
         temperature: temp_c, 
         windDir: wind_dir, 
         windSpeed: wind_kph 

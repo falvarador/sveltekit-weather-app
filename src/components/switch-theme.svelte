@@ -74,6 +74,6 @@
 <style>
     details {
         margin: 0;
-        max-width: 8rem;
+        min-width: 7.6rem;
     }
 </style>
