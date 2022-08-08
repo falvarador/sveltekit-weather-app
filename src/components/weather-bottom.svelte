@@ -5,7 +5,7 @@
 </script>
 
 <fieldset>
-    <h2>{temperature}°C</h2>
+    <h2>{temperature}°<sup>C</sup></h2>
     <div>
         <h3>{conditionText}</h3>
         <h4>{localtime}</h4>
@@ -35,5 +35,11 @@
     h4 {
         font-weight: 300;
         text-transform: uppercase;
+    }
+
+    sup {
+        font-size: 0.5em;
+        font-weight: 200;
+        margin-left: 0.5rem;
     }
 </style>

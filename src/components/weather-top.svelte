@@ -1,6 +1,6 @@
 <script>
-    export let locationName = "",
-        country = "",
+    export let locationName = "Not found",
+        country = "Not found",
         icon = "";
 </script>
 

@@ -7,7 +7,8 @@ const OPTIONS = {
 };
 
 export const getWeather = async (query = "London") => {
-    const response = await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${query}`, OPTIONS);
+    try {
+        const response = await fetch(`https://weatherapi-com.p.rapidapi.com/current.json?q=${query}`, OPTIONS);
     const json = await response.json();
 
     const { location, current } = json;
@@ -29,4 +30,7 @@ export const getWeather = async (query = "London") => {
         windDir: wind_dir, 
         windSpeed: wind_kph 
     };
+    } catch (error) {
+        return error;
+    }
 }
