@@ -23,7 +23,12 @@
         margin-top: 1rem;
     }
 
+    small {
+        margin-bottom: 1rem;
+    }
+
     .mobile {
+        align-items: center;
         flex-direction: column;
     }
 </style>

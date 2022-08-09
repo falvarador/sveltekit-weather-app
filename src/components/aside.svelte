@@ -30,12 +30,17 @@
         justify-content: space-between;
         margin: 0 auto;
         padding: 0.75rem 2rem;
-        text-align: center;
         width: 80%;
+    }
+
+    section {
+        margin: 0 auto;
+        padding: 0.7rem;
     }
 
     span {
         display: block;
+        text-align: center;
     }
 
     .mobile {
