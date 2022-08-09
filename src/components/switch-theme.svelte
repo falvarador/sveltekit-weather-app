@@ -26,92 +26,44 @@
     }
 </script>
 
-<details role="list">
-    <summary aria-haspopup="listbox">Theme</summary>
+<details role="list" dir="rtl">
+    <summary aria-haspopup="listbox" role="link">Theme</summary>
     <ul role="listbox">
         <li>
-            <label for="auto">
-                <input
-                    type="radio"
-                    id="auto"
-                    name="size"
-                    value="auto"
-                    checked={$theme === "auto"}
-                    on:click={setAutoTheme}
-                />
-                Auto
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-circle-half"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
-                    />
-                </svg>
-            </label>
+            <a
+                for="auto"
+                href="."
+                style:active={theme === "auto"}
+                on:click={setAutoTheme}
+            >
+                Auto</a
+            >
         </li>
         <li>
-            <label for="light">
-                <input
-                    type="radio"
-                    id="light"
-                    name="size"
-                    value="light"
-                    checked={$theme === "light"}
-                    on:click={setLightTheme}
-                />
-                Light
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-circle"
-                    viewBox="0 0 16 16"
-                >
-                    <path
-                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"
-                    />
-                </svg>
-            </label>
+            <a
+                for="light"
+                href="."
+                style:active={theme === "light"}
+                on:click={setLightTheme}
+            >
+                Light</a
+            >
         </li>
         <li>
-            <label for="dark">
-                <input
-                    type="radio"
-                    id="dark"
-                    name="size"
-                    value="dark"
-                    checked={$theme === "dark"}
-                    on:click={setDarkTheme}
-                />
-                Dark
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="16"
-                    height="16"
-                    fill="currentColor"
-                    class="bi bi-circle-fill"
-                    viewBox="0 0 16 16"
-                >
-                    <circle cx="8" cy="8" r="8" />
-                </svg>
-            </label>
+            <a
+                for="dark"
+                href="."
+                class:active{theme == "dark"}
+                on:click={setDarkTheme}
+            >
+                Dark</a
+            >
         </li>
     </ul>
 </details>
 
 <style>
-    details {
-        margin: 0;
-        min-width: 7.6rem;
-    }
-
-    svg {
-        margin-left: 0.25rem;
+    .active {
+        background-color: var(--dropdown-hover-background-color);
     }
 </style>

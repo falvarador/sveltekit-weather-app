@@ -1,19 +1,23 @@
 <script>
-    export let locationName = "Not found",
-        country = "Not found",
+    import MediaQuery from "./media-query.svelte";
+
+    export let locationName = "",
+        country = "",
         icon = "";
 </script>
 
-<fieldset>
-    <div>
-        <h1>{locationName}</h1>
-        <span>{country}</span>
-    </div>
-    <img src={icon} alt="weather icon" />
-</fieldset>
+<MediaQuery query="(max-width:576px)" let:matches>
+    <section class:mobile={matches}>
+        <div>
+            <h1>{locationName}</h1>
+            <span>{country}</span>
+        </div>
+        <img src={icon} alt="weather icon" />
+    </section>
+</MediaQuery>
 
 <style>
-    fieldset {
+    section {
         align-items: center;
         display: flex;
         justify-content: space-between;
@@ -29,5 +33,10 @@
     img {
         height: 5rem;
         width: 5rem;
+    }
+
+    .mobile {
+        flex-direction: column-reverse;
+        text-align: center;
     }
 </style>

@@ -23,8 +23,8 @@
         <WeatherTop {locationName} {country} {icon} />
         <WeatherBottom {temperature} {conditionText} {localtime} />
         <Aside feelslike={feelsLike} {humidity} windspeed={windSpeed} />
-    {:catch error}
-        <p>{error}</p>
+    {:catch e}
+        <p>{e}</p>
     {/await}
 </article>
 

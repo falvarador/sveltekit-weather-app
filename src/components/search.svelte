@@ -5,8 +5,6 @@
     let dispatcher = createEventDispatcher();
 
     function onSubmit(e) {
-        e.preventDefault();
-
         const formData = Object.fromEntries(new FormData(e.target));
         dispatcher("search", {
             search: formData.search,
@@ -14,7 +12,7 @@
     }
 </script>
 
-<form on:submit={onSubmit}>
+<form on:submit|preventDefault={onSubmit}>
     <input
         type="search"
         id="search"

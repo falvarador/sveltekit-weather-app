@@ -1,24 +1,28 @@
 <script>
+    import MediaQuery from "./media-query.svelte";
+
     export let humidity = 0,
         windspeed = 0,
         feelslike = 0;
 </script>
 
 <hr />
-<aside>
-    <fieldset>
-        <span>{humidity}%</span>
-        <span>Humidity</span>
-    </fieldset>
-    <fieldset>
-        <span>{windspeed} km/h</span>
-        <span>Windspeed</span>
-    </fieldset>
-    <fieldset>
-        <span>{feelslike}°</span>
-        <span>Feels like</span>
-    </fieldset>
-</aside>
+<MediaQuery query="(max-width:576px)" let:matches>
+    <aside class:mobile={matches}>
+        <section>
+            <span>{humidity}%</span>
+            <span>Humidity</span>
+        </section>
+        <section>
+            <span>{windspeed} km/h</span>
+            <span>Windspeed</span>
+        </section>
+        <section>
+            <span>{feelslike}°</span>
+            <span>Feels like</span>
+        </section>
+    </aside>
+</MediaQuery>
 
 <style>
     aside {
@@ -32,5 +36,9 @@
 
     span {
         display: block;
+    }
+
+    .mobile {
+        flex-direction: column;
     }
 </style>
